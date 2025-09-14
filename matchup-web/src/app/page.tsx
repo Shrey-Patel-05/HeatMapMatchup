@@ -1,12 +1,16 @@
 import Image from "next/image";
+import TextField from '@mui/material/TextField';
+import createCache from "@emotion/cache";
+
 
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
+
+        {/* <Image
           className="dark:invert"
-          src="/next.svg"
+          src="public/heatmap.png"
           alt="Next.js logo"
           width={180}
           height={38}
@@ -49,6 +53,44 @@ export default function Home() {
           >
             Read our docs
           </a>
+        </div> */}
+
+        <div className='flex flex-col items-center justify-center'>
+          <div className="flex flex-row items-center"> 
+            <img
+              src="/heatmap.png"
+              alt="heatmap"
+              className="flex-10/12 h-50 mt-15"
+              
+            />
+            <img
+              src="/player.png"
+              alt="player"
+              className="h-100"
+          
+            />
+          </div>
+
+          
+
+          <form className='mt-4 flex flex-col items-center justify-center  p-4 rounded-xl  w-120 ' style={{ backgroundColor: "#f6f0f0" }}>
+            <h1 className="text-3xl text-black font-extrabold p-5 rounded-3xl" style={{ backgroundColor: "#f6f0f0" }}>Current Matchup</h1>
+            <div className="grid grid-cols-2 grid-rows-2 gap-3">
+              <TextField name="batter_first" required label="Batter First Name" variant="outlined" className='bg-white px-2 py-2 mb-3 rounded-lg ' />
+              <TextField name="batter_last" required label="Batter Last Name" variant="outlined" type="password" className='bg-white px-2 py-2 rounded-lg' />
+              <TextField name="pitcher_first" required label="Pitcher First Name" variant="outlined" className='bg-white px-2 py-2 mb-3 rounded-lg ' />
+              <TextField name="pitcher_last" required label="Pitcher Last Name" variant="outlined" type="password" className='bg-white px-2 py-2 rounded-lg' />
+            </div>
+            <button
+              type='submit'
+              className='buttons   opacity-90 text-black text-3xl bg-[#79b6ce] hover:bg-blue-300 font-bold py-2 px-4 rounded-lg mt-6'
+            >
+              Predict!
+            </button>
+          </form>
+
+
+
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
@@ -97,6 +139,9 @@ export default function Home() {
           />
           Go to nextjs.org →
         </a>
+
+
+
       </footer>
     </div>
   );

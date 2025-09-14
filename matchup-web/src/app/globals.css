@@ -1,8 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+
+  background:
+    /* base grassy green */
+    linear-gradient(0deg, #2e8720, #3a9d23),
+
+    /* subtle noise speckles */
+    radial-gradient(#2f7f1c 1px, transparent 1px),
+    radial-gradient(#3c9e28 1px, transparent 1px);
+
+  background-size:
+    cover,
+    /* gradient covers screen */
+    3px 3px,
+    /* first noise layer */
+    5px 5px;
+  /* second noise layer */
+
+  background-blend-mode: overlay;
 }
 
 @theme inline {
@@ -14,8 +31,24 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+    background:
+      /* base grassy green */
+      linear-gradient(0deg, #2e8720, #3a9d23),
+
+      /* subtle noise speckles */
+      radial-gradient(#2f7f1c 1px, transparent 1px),
+      radial-gradient(#3c9e28 1px, transparent 1px);
+
+    background-size:
+      cover,
+      /* gradient covers screen */
+      3px 3px,
+      /* first noise layer */
+      5px 5px;
+    /* second noise layer */
+
+    background-blend-mode: overlay;
   }
 }
 

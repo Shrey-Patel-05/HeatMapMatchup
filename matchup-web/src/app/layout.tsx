@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,11 +25,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <AppRouterCacheProvider>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+       
+          {/* Middle rectangle */}
+          <div className="text-6xl w-full p-10 rounded-lg shadow-inner absolute top-0 flex items-center justify-center text-white font-semibold tracking-wide" style={{backgroundColor: "#c33b3b"}}>
+             HEATMAP MATCHUP
+          </div>
+
+        
+
+
         {children}
       </body>
+      </AppRouterCacheProvider>
     </html>
   );
 }
